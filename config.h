@@ -62,6 +62,7 @@ static const Layout layouts[] = {
 
 /* key definitions */
 #define MODKEY Mod1Mask
+#define MODKEY3 Mod3Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -103,14 +104,14 @@ static Key keys[] = {
 	{ MODKEY|Mod4Mask|ControlMask,  XK_l,      incrigaps,      {.i = -1 } },
 	{ MODKEY|Mod4Mask,              XK_0,      togglegaps,     {0} },
 	{ MODKEY|Mod4Mask|ShiftMask,    XK_0,      defaultgaps,    {0} },
-	{ MODKEY,                       XK_y,      incrihgaps,     {.i = +1 } },
-	{ MODKEY,                       XK_o,      incrihgaps,     {.i = -1 } },
-	{ MODKEY|ControlMask,           XK_y,      incrivgaps,     {.i = +1 } },
-	{ MODKEY|ControlMask,           XK_o,      incrivgaps,     {.i = -1 } },
-	{ MODKEY|Mod4Mask,              XK_y,      incrohgaps,     {.i = +1 } },
-	{ MODKEY|Mod4Mask,              XK_o,      incrohgaps,     {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_y,      incrovgaps,     {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_o,      incrovgaps,     {.i = -1 } },
+	{ MODKEY3,                       XK_h,      incrihgaps,     {.i = +1 } },
+	{ MODKEY3,                       XK_l,      incrihgaps,     {.i = -1 } },
+	{ MODKEY3|ControlMask,           XK_h,      incrivgaps,     {.i = +1 } },
+	{ MODKEY3|ControlMask,           XK_l,      incrivgaps,     {.i = -1 } },
+	{ MODKEY3|Mod4Mask,              XK_h,      incrohgaps,     {.i = +1 } },
+	{ MODKEY3|Mod4Mask,              XK_l,      incrohgaps,     {.i = -1 } },
+	{ MODKEY3|ShiftMask,             XK_h,      incrovgaps,     {.i = +1 } },
+	{ MODKEY3|ShiftMask,             XK_l,      incrovgaps,     {.i = -1 } },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,             			XK_q,      killclient,     {0} },
