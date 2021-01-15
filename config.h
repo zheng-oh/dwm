@@ -79,6 +79,8 @@ static const char *wallpaper[] = { "/home/zxing/scripts/wallpaper.sh"};
 static const char *downvol[] = { "/home/zxing/scripts/volume.sh",  "-"};
 static const char *upvol[] = { "/home/zxing/scripts/volume.sh",  "+" };
 static const char *termcmd[]  = { "st", NULL };
+static const char scratchpadname[] = "scratchpad";
+static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 static const char *webcmd[]  = { "chromium", NULL };
 
 static Key keys[] = {
@@ -89,6 +91,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Up,     spawn,          {.v = upvol } },
 	{ MODKEY,                       XK_Down,   spawn,          {.v = downvol } },
 	{ MODKEY,                       XK_Right,  spawn,          {.v = wallpaper } },
+	{ MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
