@@ -97,12 +97,12 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Right,  spawn,          {.v = wallpaper } },
 	{ MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
-	{ MODKEY|ControlMask,             XK_j,      rotatestack,    {.i = +1 } },
-	{ MODKEY|ControlMask,             XK_k,      rotatestack,    {.i = -1 } },
+	{ MODKEY|ControlMask,           XK_j,      rotatestack,    {.i = +1 } },
+	{ MODKEY|ControlMask,           XK_k,      rotatestack,    {.i = -1 } },
 	{ MODKEY,                       XK_j,      focusstackvis,  {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstackvis,  {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_j,      focusstackhid,  {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_k,      focusstackhid,  {.i = -1 } },
+	{ MODKEY,             			XK_s,      focusstackhid,  {.i = +1 } },
+	{ MODKEY,             			XK_a,      focusstackhid,  {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
@@ -138,8 +138,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	{ MODKEY,                       XK_s,      show,           {0} },
-	{ MODKEY,                       XK_a,      hide,           {0} },
+	{ MODKEY,                       XK_x,      hide,           {0} },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)

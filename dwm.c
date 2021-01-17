@@ -260,7 +260,6 @@ static void setlayout(const Arg *arg);
 static void setmfact(const Arg *arg);
 static void setup(void);
 static void seturgent(Client *c, int urg);
-static void show(const Arg *arg);
 static void showwin(Client *c);
 static void showhide(Client *c);
 static void sigchld(int unused);
@@ -1087,7 +1086,6 @@ focusstack(int inc, int hid)
 		return;
 	if (!selmon->clients)
 		return;
-
 	if (inc > 0) {
 		if (selmon->sel)
 			for (c = selmon->sel->next;
@@ -1118,6 +1116,9 @@ focusstack(int inc, int hid)
 			showwin(c);
 			c->mon->hidsel = 1;
 		}
+		if (selmon->hidsel)
+			selmon->hidsel = 0;
+		showwin(selmon->sel);
 	}
 }
 
@@ -2192,14 +2193,6 @@ seturgent(Client *c, int urg)
 	wmh->flags = urg ? (wmh->flags | XUrgencyHint) : (wmh->flags & ~XUrgencyHint);
 	XSetWMHints(dpy, c->win, wmh);
 	XFree(wmh);
-}
-
-void
-show(const Arg *arg)
-{
-	if (selmon->hidsel)
-		selmon->hidsel = 0;
-	showwin(selmon->sel);
 }
 
 void
